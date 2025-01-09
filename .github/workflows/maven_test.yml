@@ -11,13 +11,13 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v1
    - name: Set up JAVA
-     uses: actions/setup-java@4
+     uses: actions/setup-java@v4.6.0
      with:
       distribution: "oracle"
       java-version: "17"
    - run:  mvn --batch-mode --update-snapshots verfiy
    - run:  mkdir staging && cp target/*.jar staging
-   - uses: actions/upload-artifact@4.5.0
+   - uses: actions/upload-artifact@v4.5.0
      with:
         name: Artifacts
         path: staging
