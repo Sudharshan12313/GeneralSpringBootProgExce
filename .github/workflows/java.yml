@@ -1,0 +1,14 @@
+name: java based workflow
+on:
+ push
+jobs:
+ echo-triggers:
+  runs-on: ubuntu-latest
+  steps:
+   - name: checkout
+     uses: actions/checkout@v1
+   - name: javasetup  
+     uses: actions/setup-java@v4.6.0
+     with:
+       distribution: 'microsoft'
+       java-version: '17'
